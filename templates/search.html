@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://andybrewer.github.io/mvp/mvp.css" rel="stylesheet"></link>
+  <title>Remote Jobs</title>
+</head>
+<body>
+  <header>
+    <h1>Remote Jobs</h1>
+    <h3>{{db_leng}} jobs found.</h3>
+    <h4><a href="/expor?term={{term}}">Export to CSV</a></h4>
+    <h4><a href="/">← Go Back</a></h4>
+  </header>
+  <main>
+  {% for data in db %}
+    <div>
+      <h3>{{data["title"]}}</h3>
+      <h4>{{data["company"]}}</h4>
+      <h4><a href={{data['link']}}>Apply</a></h4>
+    </div>
+    <hr>
+  {% endfor %}
+  </main>
+</body>
+</html>
